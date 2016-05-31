@@ -8,6 +8,7 @@
 
 import UIKit
 import MediaPlayer
+import AVKit
 
 class ViewController: UIViewController {
     
@@ -18,6 +19,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func avPlayer(sender: AnyObject) {
+        let urlString = "http://www.androidbook.com/akc/filestorage/android/documentfiles/3389/movie.mp4"
+        let avplayer = AVPlayer(URL: NSURL(string: urlString)!)
+        let playerController = AVPlayerViewController()
+        playerController.player = avplayer
+        self.presentViewController(playerController, animated: true, completion: nil)
+        
     }
     
     override func viewDidLoad() {
